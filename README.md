@@ -1,2 +1,2 @@
-# middle
-A rails application for masked emailing
+# Middle
+A rails application for masked emailing.
