@@ -30,10 +30,10 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'email should be stored in lowercase' do
-    uppercase_email_address = 'SomeUppercaseLetters@example.com'
-    @user.email = uppercase_email_address
+    mixed_case_email_address = 'SomeUppercaseLetters@example.com'
+    @user.email = mixed_case_email_address
     @user.save
-    assert @user.email == uppercase_email_address.downcase
+    assert_equal mixed_case_email_address.downcase, @user.reload.email
   end
 
   test 'email validation should accept valid email addresses' do
