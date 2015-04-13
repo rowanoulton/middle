@@ -1,0 +1,14 @@
+<%= link_to('/') do %>
+  <h1>Middle</h1>
+<% end %>
+<nav>
+  <ul>
+    <li><%= link_to 'Home', '/' %></li>
+    <% if logged_in? %>
+      <li><%= link_to 'Profile', current_user %></li>
+      <li><%= link_to 'Logout', logout_path, method: 'delete' %></li>
+    <% else %>
+      <li><%= link_to 'Login', login_path %></li>
+    <% end %>
+  </ul>
+</nav>
